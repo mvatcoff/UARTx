@@ -1,7 +1,7 @@
 #USBX
 
-Script to write and read data from USB port using IOCTL Protocol in Linux.
-Very useful to debug embedded system how to Arduino, ESP, etc.
+	Script to write and read data from USB port using IOCTL Protocol in Linux.
+	Very useful to debug embedded system how to Arduino, ESP, etc.
 
 #USAGE
 
@@ -23,7 +23,10 @@ Very useful to debug embedded system how to Arduino, ESP, etc.
 	usbx /dev/ttyUSB0 8N1 9600 -t log.txt
 
 #INSTALL
+
 	$ make
+
 	$ sudo make install
+
 	$ make clean
 
