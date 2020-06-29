@@ -8,9 +8,9 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "./lib/ctrl_argv.h"
-#include "./lib/setup_port.h"
-#include "./lib/khbit_loop.h"
+#include "include/ctrl_argv.h"
+#include "include/setup_port.h"
+#include "include/khbit_loop.h"
 
 
 
