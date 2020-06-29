@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "./include/ctrl_argv.h"
-#include "./include/setup_port.h"
-#include "./include/khbit_loop.h"
+#include "./lib/ctrl_argv.c"
+#include "./lib/setup_port.c"
+#include "./lib/khbit_loop.c"
 
 
 int main( int argc, char *argv[] ) {
