@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+
 void ctrl_argv(int argc, char *argv[],char *puerto, char *path_log){
 
   if( argc < 4 ) {

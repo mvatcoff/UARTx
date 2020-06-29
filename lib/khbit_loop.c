@@ -8,7 +8,7 @@ static struct termios initial_settings, new_settings;
 static int peek_character = -1;
 
 void khbit_loop(int *fd, FILE *fd_log){
-	
+
 	char letrain=0, letraout=0;   /* caracteres de lectura escritura */
   	int cuenta;			              /* caracteres leidos en el puerto */
 
