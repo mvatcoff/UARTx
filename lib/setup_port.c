@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <termios.h>
+#include <sys/ioctl.h>
 #include "setup_port.h"
 
 

@@ -37,10 +37,10 @@ int main( int argc, char *argv[] ) {
   
   //Apertura del archivo log
 	if (path_log[0] != 0)    
-	fd_log=fopen(path_log,"w+");
-    if (fd_log == NULL){
-      printf("No se pudo crear el archivo en %s \n",path_log);
-    }
+		fd_log=fopen(path_log,"w+");
+    	if (fd_log == NULL){
+      		printf("No se pudo crear el archivo en %s \n",path_log);
+    	}
 
   //Lazo de lectura escritura
     khbit_loop(&fd,fd_log);
