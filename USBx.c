@@ -7,15 +7,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-<<<<<<< HEAD
+
 #include "./lib/ctrl_argv.c"
 #include "./lib/setup_port.c"
 #include "./lib/khbit_loop.c"
-=======
-#include "./include/ctrl_argv.c"
-#include "./include/setup_port.c"
-#include "./include/khbit_loop.c"
->>>>>>> 52c0a2722982bcb996d9c23a7b353a226bc3e445
+
 
 
 int main( int argc, char *argv[] ) {
