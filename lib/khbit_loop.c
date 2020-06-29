@@ -1,3 +1,4 @@
+#include "khbit_loop.h"
 
 static struct termios initial_settings, new_settings;
 static int peek_character = -1;

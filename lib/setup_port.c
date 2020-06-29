@@ -1,4 +1,7 @@
- 
+#include "setup_port.h"
+
+
+
 void setup_port(int *fd,char *puerto,char *argv[]){
     struct termios opciones;
     int longpal;
