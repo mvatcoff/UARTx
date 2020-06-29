@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <stdio.h>
+#include <unistd.h>
 #include "khbit_loop.h"
 
 static struct termios initial_settings, new_settings;

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <termios.h>
 #include <sys/ioctl.h>
+#include <ctype.h>
 #include "setup_port.h"
 
 
