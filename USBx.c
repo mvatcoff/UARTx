@@ -18,7 +18,8 @@ int main( int argc, char *argv[] ) {
   int fd;                       /* descriptor archivo del puerto */
   FILE *fd_log=NULL;                 /* descriptor archivo log */
   char puerto[20]="";
-  char path_log[20]=""; 
+  char path_log[20]="";
+  path_log[0]=0;
    			            
 
   /* CONTROL DE CONSISTENCIA DE LA LINEA DE COMANDOS */
@@ -35,7 +36,8 @@ int main( int argc, char *argv[] ) {
       fcntl(fd, F_SETFL, O_NDELAY); // funciona en forma asíncrona
   
   //Apertura del archivo log
-    fd_log=fopen(path_log,"w+");
+	if (path_log[0] != 0)    
+	fd_log=fopen(path_log,"w+");
     if (fd_log == NULL){
       printf("No se pudo crear el archivo en %s \n",path_log);
     }
