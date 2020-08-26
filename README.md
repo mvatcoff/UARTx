@@ -24,17 +24,14 @@ usbx [Port] [Mode] [Speed bps] [OPTIONS]
 usbx /dev/ttyUSB0 8N1 9600
 	
 usbx /dev/ttyUSB0 8N1 9600 -t log.txt
-
 ```
 
 # INSTALL
 
 ```
-
 $ make
 
 $ sudo make install
 
 $ make clean
-
 ```
