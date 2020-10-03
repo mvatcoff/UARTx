@@ -6,15 +6,15 @@
 # USAGE
 
 ```
-usbx [Port] [Mode] [Speed bps] [OPTIONS]
+usbx [Port] [Mode] [Speed bps] [Options]
 		
 		[Port]
 			PATH of port
-		[MODE]
-			bit_data|parity|stop_bit ->Ej 8N1
+		[Mode]
+			bit_data|parity|stop_bit 
 		[Speed bps]
-			Port transmission speed in bps	->Ej 9600 
-		[OPCIONES]
+			Port transmission speed in bps	 
+		[Options]
 			-t 	PATH of log file
 ```
 
