@@ -1,7 +1,7 @@
 # USBX
 
 	Script to write and read data from USB port using IOCTL Protocol in Linux.
-	Very useful to debug embedded system how to Arduino, ESP, etc.
+	Very useful to connect or debug embedded system how to Arduino, ESP, Raspberry Pi, etc.
 
 # USAGE
 
