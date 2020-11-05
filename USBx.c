@@ -34,14 +34,14 @@ int main( int argc, char *argv[] ) {
     else 
       //fcntl(fd, F_SETFL, 0); // funciona en forma síncrona
       fcntl(fd, F_SETFL, O_NDELAY); // funciona en forma asíncrona
-  
+  setup_port(&fd,puerto,argv);
   //Apertura del archivo log
-	if (path_log[0] != 0)    
+	if (path_log[0] != 0){    
 		fd_log=fopen(path_log,"w+");
     	if (fd_log == NULL){
       		printf("No se pudo crear el archivo en %s \n",path_log);
     	}
-
+	}
   //Lazo de lectura escritura
     khbit_loop(&fd,fd_log);
 

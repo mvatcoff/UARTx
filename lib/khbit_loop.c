@@ -14,22 +14,23 @@ void khbit_loop(int *fd, FILE *fd_log){
 
 	init_keyboard();
 	while( (letrain != 4) && (letraout != 4) ) {  // <CTRL-D>
+	    
 	    if(kbhit()) {
 	    	letraout = readch();
-        	if (fd_log != NULL)
-            	fwrite(&letraout,sizeof(char),sizeof(letraout),fd_log);
-       		write( *fd, &letraout, 1 ); //ESCRIBIR EL PUERTO
+        	if (fd_log != NULL) fwrite(&letraout,sizeof(char),sizeof(letraout),fd_log);
           	if(letraout == 10) { 
 	    		letraout = 13; 
-	    		write( *fd, &letraout, 1 ); 
 	    	}
+	    	write( *fd, &letraout, 1 ); //ESCRIBIR EL PUERTO
 	    	fflush( NULL );
+	    	//tcflush(*fd,TCIOFLUSH);
+	    	//tcdrain(*fd);
 	    }
+	    
 	    cuenta=read(*fd, &letrain, 1);
         if( cuenta > 0 ) {
-        	if (fd_log != NULL) 
-            	fwrite(&letrain, sizeof(char),sizeof(letrain),fd_log);
-          	write( 0, &letrain, 1 ); 
+        	if (fd_log != NULL) fwrite(&letrain, sizeof(char),sizeof(letrain),fd_log);
+          	write( 1, &letrain, 1 ); 
 	    	fflush( NULL );
  	    }
     }
