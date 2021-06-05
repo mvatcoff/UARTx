@@ -1,3 +1,24 @@
+/*
+This is a software to write and read data from USB-UART port in Linux systems
+
+Copyright (C) 2021  Mariano Vatcoff <marianovatcoff@gmail.com>
+
+    This file is part of UARTx
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
@@ -12,7 +33,7 @@ void setup_port(int *fd,char *puerto,char *argv[]){
     int longpal;
     // Lectura de estado de linea por la estructura termios
   tcgetattr( *fd, &opciones );
-  printf( "Antes de configurar: \n" ); 
+  printf( "Antes de configurar: \n" );
   estadolinea( puerto, opciones );
 
   // Fijando velocidad del puerto
@@ -29,12 +50,12 @@ void setup_port(int *fd,char *puerto,char *argv[]){
     case 7: longpal = CS7; break;
     case 8: longpal = CS8; break;
   }
-  opciones.c_cflag |= longpal; 
+  opciones.c_cflag |= longpal;
 
   // Fijando la paridad
   if( toupper(argv[2][1]) == 'N' )
     opciones.c_cflag &= ~PARENB;
-  
+
 if( toupper(argv[2][1]) == 'E' ) {
     opciones.c_cflag |= PARENB;
     opciones.c_cflag &= ~PARODD;
@@ -43,8 +64,8 @@ if( toupper(argv[2][1]) == 'E' ) {
   if( toupper(argv[2][1]) == 'O' ) {
     opciones.c_cflag |= PARENB;
     opciones.c_cflag |= PARODD;
-  }	
-  
+  }
+
 // Fijando la cantidad de stop bits
   if( atoi(&argv[2][2]) == 1 )
     opciones.c_cflag &= ~CSTOPB;
@@ -58,13 +79,13 @@ if( toupper(argv[2][1]) == 'E' ) {
   opciones.c_cc[VTIME] = 0;
   opciones.c_cc[VMIN] = 1;
 
-  // Fijación de los parámetros el puerto 
+  // Fijación de los parámetros el puerto
   tcsetattr( *fd, TCSANOW, &opciones );
 
-  // Obtención de los parámetros el puerto 
+  // Obtención de los parámetros el puerto
   tcgetattr( *fd, &opciones );
 
-  printf( "Después de configurar: \n" ); 
+  printf( "Después de configurar: \n" );
   estadolinea( puerto, opciones );
 }
 
@@ -72,7 +93,7 @@ if( toupper(argv[2][1]) == 'E' ) {
 void estadolinea( char *puerto, struct termios opciones ) {
   int speed;
 
-  printf( "%s: ", puerto ); 
+  printf( "%s: ", puerto );
   // Bits de cada palabra
   if( (opciones.c_cflag & CSIZE) == CS5) printf( "5" );
   if( (opciones.c_cflag & CSIZE) == CS6) printf( "6" );
@@ -92,7 +113,7 @@ void estadolinea( char *puerto, struct termios opciones ) {
 
   // Velocidad de transmisión
   printf( " " );
-  speed = cfgetispeed( &opciones ); 
+  speed = cfgetispeed( &opciones );
   switch( speed ) {
     case B50: printf( "50" ); break;
     case B75: printf( "75" ); break;
@@ -116,7 +137,7 @@ void estadolinea( char *puerto, struct termios opciones ) {
     printf( " bps\n" );
 }
 
-int velocidad( int speed ) { 
+int velocidad( int speed ) {
   switch( speed ) {
     case 50: return( B50 );
     case 75: return( B75 );
@@ -135,7 +156,7 @@ int velocidad( int speed ) {
     case 38400: return( B38400 );
     case 57600: return( B57600 );
     case 115200: return( B115200 );
-    default: printf ( "Error velocidad no permitida\n" ); 
+    default: printf ( "Error velocidad no permitida\n" );
              exit(1);
              break;
   }
