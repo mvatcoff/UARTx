@@ -1,17 +1,17 @@
-# USBX
+# UARTX
 
-	Script to write and read data from USB port using IOCTL Protocol in Linux.
-	Very useful to connect or debug embedded system how to Arduino, ESP, Raspberry Pi, etc.
+	This is a software to write and read data from USB-UART port in Linux systems.
+	Very useful to establish connections with embedded systems how to Arduino, ESP, Raspberry Pi, FPGA, etc.
 
 # USAGE
 
 ```
-usbx [Port] [Mode] [Speed bps] [Options]
-		
+uartx [Port] [Mode] [Speed bps] [Options]
+
 		[Port]
 			PATH of port
 		[Mode]
-			bit_data|parity|stop_bit 
+			bit_data|parity|stop_bit
 		[Speed bps]
 			Port transmission speed in bps	 
 		[Options]
@@ -21,9 +21,11 @@ usbx [Port] [Mode] [Speed bps] [Options]
 # EXAMPLE
 
 ```
-usbx /dev/ttyUSB0 8N1 9600
-	
-usbx /dev/ttyUSB0 8N1 9600 -t log.txt
+uartx /dev/ttyUSB0 8N1 9600
+
+uartx /dev/ttyS0 8N1 9600
+
+uartx /dev/ttyUSB0 8N1 9600 -t log.txt
 ```
 
 # INSTALL

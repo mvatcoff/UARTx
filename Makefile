@@ -1,10 +1,10 @@
-src=USBx.c
-exe=usbx
+src=UARTx.c
+exe=uartx
 cc=gcc -Wall -Iinclude
 obj=obj/ctrl_argv.o obj/khbit_loop.o obj/setup_port.o
 path_install=/usr/bin
 
-usbx: $(src) $(obj)
+uartx: $(src) $(obj)
 	$(cc) $(obj) $(src) -o $(exe)
 
 obj/ctrl_argv.o: lib/ctrl_argv.c
