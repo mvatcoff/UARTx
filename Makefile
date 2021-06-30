@@ -21,7 +21,7 @@ src=UARTx.c
 exe=uartx
 cc=gcc -Wall -Iinclude
 obj=obj/ctrl_argv.o obj/khbit_loop.o obj/setup_port.o
-path_install=/usr/bin
+path_install=$$HOME/.local/bin/
 
 uartx: $(src) $(obj)
 	$(cc) $(obj) $(src) -o $(exe)

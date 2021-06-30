@@ -9,7 +9,7 @@ Very useful to establish connections with embedded systems how to Arduino, ESP, 
 ```
 $ make
 
-$ sudo make install
+$ make install
 
 $ make clean
 ```
