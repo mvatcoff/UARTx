@@ -19,6 +19,8 @@ Copyright (C) 2021  Mariano Vatcoff <marianovatcoff@gmail.com>
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#define TD_LOOP 1/1000 //Delay in seconds
+
 int kbhit();
 void init_keyboard();
 void close_keyboard();

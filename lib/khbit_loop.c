@@ -54,6 +54,9 @@ void khbit_loop(int *fd, FILE *fd_log){
           	write( 1, &letrain, 1 );
 	    	fflush( NULL );
  	    }
+ 	    //Se espera TD_LOOP segundos entre lecturas
+ 	    //para reducir el uso de la CPU
+ 	    sleep(TD_LOOP);
     }
 }
 
